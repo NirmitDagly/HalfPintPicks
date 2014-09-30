@@ -2,8 +2,8 @@
 //  WelComeViewController.m
 //  HalfPintPicks
 //
-//  Created by MAAUMA on 9/27/14.
-//  Copyright (c) 2014 Visionary IT Solutions. All rights reserved.
+
+//  Copyright (c) 2014 TechCronus . All rights reserved.
 //
 
 #import "WelComeViewController.h"
@@ -28,11 +28,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setlocalization];
+    [self Intilization];
     // Do any additional setup after loading the view.
 }
 
--(void)setlocalization {
+-(void)Intilization {
     [btnTwitter.layer setCornerRadius:3.0f];
     [btnLoginFacebook.layer setCornerRadius:3.0f];
     
@@ -56,6 +56,8 @@
 */
 
 - (IBAction)Signup_Click:(id)sender {
+    RegisterViewController *signUpVC = (RegisterViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"RegisterViewController"];
+    [self presentViewController:signUpVC animated:YES completion:nil];
 }
 
 - (IBAction)Login_Click:(id)sender {

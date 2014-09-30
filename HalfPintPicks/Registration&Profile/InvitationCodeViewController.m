@@ -2,8 +2,8 @@
 //  InvitationCodeViewController.m
 //  HalfPintPicks
 //
-//  Created by MAAUMA on 9/27/14.
-//  Copyright (c) 2014 Visionary IT Solutions. All rights reserved.
+
+//  Copyright (c) 2014 TechCronus . All rights reserved.
 //
 
 #import "InvitationCodeViewController.h"

@@ -2,8 +2,8 @@
 //  RegisterViewController.m
 //  HalfPintPicks
 //
-//  Created by MAAUMA on 9/27/14.
-//  Copyright (c) 2014 Visionary IT Solutions. All rights reserved.
+
+//  Copyright (c) 2014 TechCronus . All rights reserved.
 //
 
 #import "RegisterViewController.h"
@@ -13,6 +13,8 @@
 @end
 
 @implementation RegisterViewController
+
+@synthesize txtEmail,btnClose,btnJoin,lblApptitle,lblInfoText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +28,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self Intilization];
     // Do any additional setup after loading the view.
+}
+
+//Method to Intilization of intial variables and methods
+-(void)Intilization {
+    txtEmail.delegate = self;
+    [txtEmail becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,4 +55,21 @@
 }
 */
 
+- (IBAction)Join_Click:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)Close_click:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma TextField Methods
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if([txtEmail isEqual:textField])
+    {
+        [txtEmail resignFirstResponder];
+    }
+    return YES;
+}
 @end

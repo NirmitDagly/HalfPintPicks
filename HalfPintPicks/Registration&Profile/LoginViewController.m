@@ -2,8 +2,8 @@
 //  LoginViewController.m
 //  HalfPintPicks
 //
-//  Created by MAAUMA on 9/27/14.
-//  Copyright (c) 2014 Visionary IT Solutions. All rights reserved.
+
+//  Copyright (c) 2014 TechCronus . All rights reserved.
 //
 
 #import "LoginViewController.h"
@@ -28,8 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    txtPassword.delegate = self;
-    txtEMail.delegate = self;
+    [self Intilization];
     // Do any additional setup after loading the view.
 }
 
@@ -37,6 +36,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//Method to Intilization of intial variables and methods
+-(void)Intilization {
+    txtPassword.delegate = self;
+    txtEMail.delegate = self;
+    [txtEMail becomeFirstResponder];
 }
 
 /*
@@ -59,5 +65,22 @@
 
 - (IBAction)Close_Click:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma TextField Related Methods
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if([self.txtEMail isEqual:textField])
+    {
+        [txtEMail resignFirstResponder];
+        [txtPassword becomeFirstResponder];
+    }
+    else if ([txtPassword isEqual:textField])
+    {
+        [txtPassword resignFirstResponder];
+        
+    }
+    return YES;
 }
 @end
