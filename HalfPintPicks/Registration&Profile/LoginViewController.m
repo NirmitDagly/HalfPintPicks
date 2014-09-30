@@ -59,6 +59,7 @@
 
 - (IBAction)Login_Click:(id)sender {
     TabbarViewController *tabVC = (TabbarViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"TabbarViewController"];
+    [tabVC setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
     //[self.navigationController pushViewController:tabVC animated:YES];
     [self presentViewController:tabVC animated:YES completion:nil];
 }
