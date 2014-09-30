@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InvitationCodeViewController : UIViewController
+@interface InvitationCodeViewController : UIViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextField *txtCode;
 @property (weak, nonatomic) IBOutlet UIButton *btnEnter;

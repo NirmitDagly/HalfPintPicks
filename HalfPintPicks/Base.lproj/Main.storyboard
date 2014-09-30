@@ -12,7 +12,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="kz4-o9-VBo" kind="relationship" relationship="rootViewController" id="9bk-DV-uod"/>
+                        <segue destination="g05-P7-TA8" kind="relationship" relationship="rootViewController" id="eIj-74-xHj"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhB-7E-sB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -41,6 +41,9 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="g05-P7-TA8" id="LA5-fs-rg9"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zV1-rO-R0o">
                                         <rect key="frame" x="20" y="217" width="280" height="40"/>
@@ -75,6 +78,9 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="g05-P7-TA8" id="uzp-yd-Gxw"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yw-6C-6Xw">
                                         <rect key="frame" x="20" y="453" width="280" height="40"/>
@@ -97,10 +103,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="g05-P7-TA8" id="Hvb-YE-aaM"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="606-EM-M2F"/>
                     <connections>
                         <outlet property="btnEnter" destination="zV1-rO-R0o" id="gS6-LO-cWy"/>
                         <outlet property="btnJoin" destination="1yw-6C-6Xw" id="BtA-4y-Ebd"/>

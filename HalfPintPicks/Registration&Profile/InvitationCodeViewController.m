@@ -13,6 +13,7 @@
 @end
 
 @implementation InvitationCodeViewController
+@synthesize txtEmail,txtCode,btnJoin,btnEnter,lblAppname,lblCodetext,lblEmailtext,scrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,10 +30,20 @@
     // Do any additional setup after loading the view.
 }
 
+//Method to Intilization of intial variables and methods
+-(void)Intilization {
+    [txtCode becomeFirstResponder];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewDidLayoutSubviews {
+    [scrollView setFrame:CGRectMake(0, 0, [HelperMethod GetDeviceWidth], [HelperMethod GetDeviceHeight])];
+    [scrollView setContentSize:CGSizeMake(320, 550)];
 }
 
 /*
@@ -51,4 +62,40 @@
 
 - (IBAction)Submit_click:(id)sender {
 }
+
+#pragma TextField Related Methods
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if([txtEmail isEqual:textField])
+    {
+        [txtEmail resignFirstResponder];
+    }
+    else if ([txtCode isEqual:textField])
+    {
+        [txtCode resignFirstResponder];
+        
+    }
+    return YES;
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    if([txtEmail isEqual:textField])
+    {
+        [scrollView setContentSize:CGSizeMake(320, 720)];
+        [scrollView scrollRectToVisible:CGRectMake(0, scrollView.frame.size.height - 190, [HelperMethod GetDeviceWidth], scrollView.frame.size.height) animated:YES];
+    }
+    return YES;
+}
+
+-(BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    if([txtEmail isEqual:textField])
+    {
+        [scrollView setContentSize:CGSizeMake(320, 550)];
+        [scrollView scrollRectToVisible:CGRectMake(0, 0, [HelperMethod GetDeviceWidth], [HelperMethod GetDeviceHeight]) animated:YES];
+        [scrollView setFrame:CGRectMake(0, 0, [HelperMethod GetDeviceWidth], [HelperMethod GetDeviceHeight])];
+    }
+    return YES;
+}
+
 @end
