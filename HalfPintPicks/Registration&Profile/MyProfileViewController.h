@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyProfileViewController : UIViewController
+@interface MyProfileViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tblMyprofileData;
 
 @end

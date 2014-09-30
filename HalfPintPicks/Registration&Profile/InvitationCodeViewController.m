@@ -7,6 +7,7 @@
 //
 
 #import "InvitationCodeViewController.h"
+#import "WelComeViewController.h"
 
 @interface InvitationCodeViewController ()
 
@@ -58,9 +59,13 @@
 */
 
 - (IBAction)Join_click:(id)sender {
+
 }
 
 - (IBAction)Submit_click:(id)sender {
+    WelComeViewController *welComeVC = (WelComeViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"WelComeViewController"];
+    [self presentViewController:welComeVC animated:YES completion:nil];
+    
 }
 
 #pragma TextField Related Methods

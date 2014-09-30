@@ -40,6 +40,8 @@
 		C65C5F4819D9E60700E19129 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C65C5F3E19D9E60700E19129 /* AFXMLRequestOperation.m */; };
 		C65C5F4919D9E60700E19129 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C65C5F4019D9E60700E19129 /* UIImageView+AFNetworking.m */; };
 		C65C5F4C19D9E6C200E19129 /* GeneralDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = C65C5F4B19D9E6C200E19129 /* GeneralDeclaration.m */; };
+		C68307BB19DB3EC700CC4959 /* ItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C68307BA19DB3EC700CC4959 /* ItemListViewController.m */; };
+		C68307BE19DB3FC900CC4959 /* CamCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C68307BD19DB3FC900CC4959 /* CamCaptureManager.m */; };
 		C6A0406F19D876D6005547D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A0406E19D876D6005547D0 /* Foundation.framework */; };
 		C6A0407119D876D6005547D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A0407019D876D6005547D0 /* CoreGraphics.framework */; };
 		C6A0407319D876D6005547D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A0407219D876D6005547D0 /* UIKit.framework */; };
@@ -127,6 +129,10 @@
 		C65C5F4019D9E60700E19129 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		C65C5F4A19D9E6C200E19129 /* GeneralDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeneralDeclaration.h; path = Core/GeneralDeclaration.h; sourceTree = "<group>"; };
 		C65C5F4B19D9E6C200E19129 /* GeneralDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeneralDeclaration.m; path = Core/GeneralDeclaration.m; sourceTree = "<group>"; };
+		C68307B919DB3EC700CC4959 /* ItemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemListViewController.h; sourceTree = "<group>"; };
+		C68307BA19DB3EC700CC4959 /* ItemListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemListViewController.m; sourceTree = "<group>"; };
+		C68307BC19DB3FC900CC4959 /* CamCaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamCaptureManager.h; sourceTree = "<group>"; };
+		C68307BD19DB3FC900CC4959 /* CamCaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamCaptureManager.m; sourceTree = "<group>"; };
 		C6A0406B19D876D6005547D0 /* HalfPintPicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HalfPintPicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A0406E19D876D6005547D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C6A0407019D876D6005547D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -387,6 +393,10 @@
 		C6A040AE19D87992005547D0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C68307BC19DB3FC900CC4959 /* CamCaptureManager.h */,
+				C68307BD19DB3FC900CC4959 /* CamCaptureManager.m */,
+				C68307B919DB3EC700CC4959 /* ItemListViewController.h */,
+				C68307BA19DB3EC700CC4959 /* ItemListViewController.m */,
 				C6A040AF19D87992005547D0 /* TabbarViewController.h */,
 				C6A040B019D87992005547D0 /* TabbarViewController.m */,
 			);
@@ -577,6 +587,8 @@
 				C65C5F2C19D9E60000E19129 /* UIImage+Scale.m in Sources */,
 				C65C5F1519D9E5FA00E19129 /* NSString+SBJSON.m in Sources */,
 				C65C5F4419D9E60700E19129 /* AFJSONRequestOperation.m in Sources */,
+				C68307BE19DB3FC900CC4959 /* CamCaptureManager.m in Sources */,
+				C68307BB19DB3EC700CC4959 /* ItemListViewController.m in Sources */,
 				C6A040CE19D87992005547D0 /* ShopViewController.m in Sources */,
 				C65C5F1319D9E5FA00E19129 /* NSObject+PropertyListing.m in Sources */,
 				C65C5F1719D9E5FA00E19129 /* SBJsonBase.m in Sources */,

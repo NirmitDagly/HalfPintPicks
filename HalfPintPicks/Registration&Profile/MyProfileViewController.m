@@ -13,6 +13,9 @@
 @end
 
 @implementation MyProfileViewController
+{
+    NSMutableArray *arrData;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,4 +49,50 @@
 }
 */
 
+
+#pragma Tableview Delagate Methods
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.row == 0)
+    {
+        return 213.0f;
+    }
+    else
+        return 217.0f;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [arrData count] + 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *CellIdentifier = @"ItamCell";
+    if(indexPath.row == 0)
+        CellIdentifier = @"HeaderCell";
+    
+    UITableViewCell *cell= [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if(cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.separatorInset = UIEdgeInsetsZero;
+        cell.userInteractionEnabled = YES;
+    }
+    
+    if([CellIdentifier isEqualToString:@"HeaderCell"])
+    {
+        EGOImageView *coverImageView = (EGOImageView *)[cell.contentView viewWithTag:10];
+        EGOImageView *userImageview = (EGOImageView *)[cell.contentView viewWithTag:11];
+        UISegmentedControl *sgMent = (UISegmentedControl *)[cell.contentView viewWithTag:12];
+        [sgMent setSelectedSegmentIndex:1];
+    }
+    else
+    {
+        
+    }
+    return cell;
+    
+}
 @end
