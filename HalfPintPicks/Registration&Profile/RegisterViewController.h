@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterViewController : UIViewController<UITextFieldDelegate>
+@interface RegisterViewController : UIViewController<UITextFieldDelegate,ApiRequestDelegate,MBProgressHUDDelegate>
+{
+    MBProgressHUD *HUD;
+}
 @property (strong, nonatomic) IBOutlet UITextField *txtEmail;
 - (IBAction)Join_Click:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *lblInfoText;

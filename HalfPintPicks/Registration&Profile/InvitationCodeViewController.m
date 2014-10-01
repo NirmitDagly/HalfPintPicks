@@ -60,6 +60,8 @@
 
 #pragma Requests
 -(void)VarifyInvitationCode {
+    
+    [self displayLoadingView];
     ApiRequest *apirequest = [[ApiRequest alloc]init];
     apirequest.apiRequestDelegate = self;
     NSString *urlString = [HelperMethod GetWebAPIBasePath];
@@ -69,27 +71,55 @@
 }
 
 -(void)Invitationcoderequest {
+    
+    [self displayLoadingView];
     ApiRequest *apirequest = [[ApiRequest alloc]init];
     apirequest.apiRequestDelegate = self;
     NSString *urlString = [HelperMethod GetWebAPIBasePath];
     
-    urlString = [urlString stringByAppendingString:[NSString stringWithFormat:@"&email=%@",txtEmail.text]];
+    urlString = [urlString stringByAppendingString:[NSString stringWithFormat:@"&Email=%@",txtEmail.text]];
     [apirequest sendJsonGetRequestwithurl:urlString requestId:SecondRequest];
 }
 
 - (IBAction)Join_click:(id)sender {
-
+    //[self Invitationcoderequest];
 }
 
 - (IBAction)Submit_click:(id)sender {
+    //[self VarifyInvitationCode];
+    
     WelComeViewController *welComeVC = (WelComeViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"WelComeViewController"];
     [self presentViewController:welComeVC animated:YES completion:nil];
     
 }
 
 
+//To display loading view
+-(void)displayLoadingView
+{
+    HUD = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    HUD.delegate = self;
+    [HUD hide:YES afterDelay:30.0];
+}
+
+//To dismiss loading view
+-(void)dismissLoadingView
+{
+    [HUD removeFromSuperview];
+    HUD = nil;
+}
+
+#pragma mark MBProgressHUDDelegate methods
+- (void)hudWasHidden:(MBProgressHUD *)hud {
+	[HUD removeFromSuperview];
+	HUD = nil;
+}
+
 #pragma Requests callback Delagate Methods
 -(void)apiRequestCompletedWithError:(NSString *)errorString requestId:(int)requestId{
+    
+    UIAlertView *errorAlertView = [[UIAlertView alloc]initWithTitle:[[NSBundle mainBundle] valueForKey:@"CFBundleName"] message:@"Error" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [errorAlertView show];
     
 }
 
@@ -102,14 +132,30 @@
                                                          options:kNilOptions
                                                            error:&error];
     NSLog(@"%@",responceDictionary);
+    [self dismissLoadingView];
     if(requestId == FirstRequest)
     {
         NSLog(@"%d",FirstRequest);
+        if([[responceDictionary valueForKey:@"status"] intValue] == Success)
+        {
+            WelComeViewController *welComeVC = (WelComeViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"WelComeViewController"];
+            [self presentViewController:welComeVC animated:YES completion:nil];
+        }
         
     }
     else if (requestId == SecondRequest)
     {
         NSLog(@"%d",SecondRequest);
+        if([[responceDictionary valueForKey:@"status"] intValue] == Success)
+        {
+            UIAlertView *successRegisteredAlertView = [[UIAlertView alloc]initWithTitle:[[NSBundle mainBundle] valueForKey:@"CFBundleName"] message:@"Thank you for joining with us. \n Your email is successfully registered with us . Please check your email for Invitation code." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [successRegisteredAlertView show];
+        }
+        else if ([[responceDictionary valueForKey:@"status"] intValue] == Fail)
+        {
+            UIAlertView *registrationErrorView = [[UIAlertView alloc]initWithTitle:[[NSBundle mainBundle] valueForKey:@"CFBundleName"] message:@"There is some error occured while registering your email .Please try again after some time. \nThank You" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [registrationErrorView show];
+        }
     }
 
 }

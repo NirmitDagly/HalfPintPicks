@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController<UITextFieldDelegate>
+@interface LoginViewController : UIViewController<UITextFieldDelegate,ApiRequestDelegate,MBProgressHUDDelegate>
+{
+    MBProgressHUD *HUD;
+}
 @property (weak, nonatomic) IBOutlet UITextField *txtEMail;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 @property (weak, nonatomic) IBOutlet UIButton *btnLogin;

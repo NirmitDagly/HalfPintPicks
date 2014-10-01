@@ -20,4 +20,11 @@ typedef enum CurrentRequestIds {
     EightRequest = 8
 } RequestId;
 
+
+typedef enum RequestStatus {
+    Success = 1,
+    Fail = 0,
+    Error = 2
+} Status;
+
 #endif
