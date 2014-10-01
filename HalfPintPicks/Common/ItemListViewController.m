@@ -27,7 +27,6 @@
 }
 
 - (void)didReceiveMemoryWarning {
-    NSLog(@"Memory Warning : %@", NSStringFromClass([self class]));
     [super didReceiveMemoryWarning];
 }
 -(void)viewWillAppear:(BOOL)animated {

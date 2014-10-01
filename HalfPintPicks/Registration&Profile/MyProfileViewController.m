@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [GeneralDeclaration generalDeclaration].currentScreen = @"MyProfileViewController";
     // Do any additional setup after loading the view.
 }
 
@@ -62,7 +63,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [arrData count] + 1;
+    return [arrData count] + 2;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,7 +76,6 @@
     if(cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-        cell.backgroundColor = [UIColor clearColor];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.separatorInset = UIEdgeInsetsZero;
         cell.userInteractionEnabled = YES;
@@ -83,6 +83,7 @@
     
     if([CellIdentifier isEqualToString:@"HeaderCell"])
     {
+        cell.backgroundColor = [UIColor clearColor];
         EGOImageView *coverImageView = (EGOImageView *)[cell.contentView viewWithTag:10];
         EGOImageView *userImageview = (EGOImageView *)[cell.contentView viewWithTag:11];
         UISegmentedControl *sgMent = (UISegmentedControl *)[cell.contentView viewWithTag:12];
@@ -90,7 +91,7 @@
     }
     else
     {
-        
+        cell.backgroundColor = [UIColor colorWithRed:218.0f/255.0f green:218.0f/255.0f blue:218.0f/255.0f alpha:1.0f];
     }
     return cell;
     

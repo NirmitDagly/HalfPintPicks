@@ -16,6 +16,8 @@
 #import "GeneralDeclaration.h"
 #import "EGOImageView.h"
 #import "JSON.h"
+#import "ApiRequest.h"
+#import "Enums.h"
 
 #define IS_IPAD    (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
 #define IS_IPHONE_5 (IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 568.0f)

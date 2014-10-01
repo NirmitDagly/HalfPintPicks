@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7810A75419DBCFF50001A9FC /* ApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7810A75319DBCFF50001A9FC /* ApiRequest.m */; };
 		788F562019DAC89E00D15CE4 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 788F561619DAC89E00D15CE4 /* EGOCache.m */; };
 		788F562119DAC89E00D15CE4 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 788F561719DAC89E00D15CE4 /* README.mdown */; };
 		788F562219DAC89E00D15CE4 /* EGOImageLoadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 788F561A19DAC89E00D15CE4 /* EGOImageLoadConnection.m */; };
@@ -62,6 +63,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7810A75219DBCFF50001A9FC /* ApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApiRequest.h; path = Core/ApiRequest.h; sourceTree = "<group>"; };
+		7810A75319DBCFF50001A9FC /* ApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApiRequest.m; path = Core/ApiRequest.m; sourceTree = "<group>"; };
+		7810A75619DBDD700001A9FC /* Enums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
 		788F561519DAC89E00D15CE4 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
 		788F561619DAC89E00D15CE4 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
 		788F561719DAC89E00D15CE4 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
@@ -180,6 +184,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7810A75519DBDD430001A9FC /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				7810A75619DBDD700001A9FC /* Enums.h */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		788F561319DAC89E00D15CE4 /* EgoImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +498,7 @@
 		C6A040D319D87A2A005547D0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7810A75519DBDD430001A9FC /* Enums */,
 				C6A040D419D87A37005547D0 /* HelperClasses */,
 			);
 			name = Core;
@@ -494,6 +507,8 @@
 		C6A040D419D87A37005547D0 /* HelperClasses */ = {
 			isa = PBXGroup;
 			children = (
+				7810A75219DBCFF50001A9FC /* ApiRequest.h */,
+				7810A75319DBCFF50001A9FC /* ApiRequest.m */,
 				C65C5F4A19D9E6C200E19129 /* GeneralDeclaration.h */,
 				C65C5F4B19D9E6C200E19129 /* GeneralDeclaration.m */,
 				C65C5EF519D9E5A100E19129 /* Base64.h */,
@@ -582,6 +597,7 @@
 				C65C5F1419D9E5FA00E19129 /* NSObject+SBJSON.m in Sources */,
 				C65C5EFE19D9E5ED00E19129 /* Reachability.m in Sources */,
 				C65C5F4919D9E60700E19129 /* UIImageView+AFNetworking.m in Sources */,
+				7810A75419DBCFF50001A9FC /* ApiRequest.m in Sources */,
 				C65C5F4619D9E60700E19129 /* AFPropertyListRequestOperation.m in Sources */,
 				C65C5EFA19D9E5A100E19129 /* HelperMethod.m in Sources */,
 				C65C5F2C19D9E60000E19129 /* UIImage+Scale.m in Sources */,

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="K7C-im-tm8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="K7C-im-tm8">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -18,7 +18,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhB-7E-sB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-164" y="10"/>
+            <point key="canvasLocation" x="-358" y="10"/>
         </scene>
         <!--Invitation Code View Controller-->
         <scene sceneID="IIR-Ze-29q">
@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8JR-V8-hHS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="204" y="732"/>
+            <point key="canvasLocation" x="196" y="442"/>
         </scene>
         <!--Wel Come View Controller-->
         <scene sceneID="Tc1-PK-9gq">
@@ -244,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lf2-t1-i0k" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="204" y="10"/>
+            <point key="canvasLocation" x="196" y="-246"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Cxz-Sj-ShC">
@@ -402,7 +402,7 @@
             </objects>
             <point key="canvasLocation" x="949" y="363"/>
         </scene>
-        <!--Shop-->
+        <!--Navigation Controller - Shop-->
         <scene sceneID="sax-v6-Jwb">
             <objects>
                 <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="Wvf-fa-icj" sceneMemberID="viewController">
@@ -444,7 +444,7 @@
             </objects>
             <point key="canvasLocation" x="2314" y="-630"/>
         </scene>
-        <!--Sell-->
+        <!--Navigation Controller - Sell-->
         <scene sceneID="oqA-Lw-joJ">
             <objects>
                 <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="C5J-IC-7Tv" sceneMemberID="viewController">
@@ -486,7 +486,7 @@
             </objects>
             <point key="canvasLocation" x="2314" y="66"/>
         </scene>
-        <!--Me-->
+        <!--Navigation Controller - Me-->
         <scene sceneID="q53-C7-LOU">
             <objects>
                 <navigationController definesPresentationContext="YES" id="hwh-mI-iB4" sceneMemberID="viewController">
@@ -502,7 +502,7 @@
             </objects>
             <point key="canvasLocation" x="1674" y="753"/>
         </scene>
-        <!--Profile-->
+        <!--My Profile View Controller - Profile-->
         <scene sceneID="VUJ-iN-dPM">
             <objects>
                 <viewController storyboardIdentifier="MyProfileViewController" id="O94-Yk-vH6" customClass="MyProfileViewController" sceneMemberID="viewController">
@@ -555,7 +555,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="215"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -586,7 +586,7 @@
             </objects>
             <point key="canvasLocation" x="2314" y="762"/>
         </scene>
-        <!--Favourites-->
+        <!--Navigation Controller - Favourites-->
         <scene sceneID="mDv-Ey-aqg">
             <objects>
                 <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="jjy-6L-QhL" sceneMemberID="viewController">
@@ -628,7 +628,7 @@
             </objects>
             <point key="canvasLocation" x="2314" y="1474"/>
         </scene>
-        <!--Cart-->
+        <!--Navigation Controller - Cart-->
         <scene sceneID="eZo-3t-mKX">
             <objects>
                 <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="Z7H-8G-jJo" sceneMemberID="viewController">
@@ -682,7 +682,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="150" height="225"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is a itam name it is a good item to buy for testing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sH-ZN-nN7">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is a itam name it is a good item to buy for testing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="130" translatesAutoresizingMaskIntoConstraints="NO" id="6sH-ZN-nN7">
                                 <rect key="frame" x="10" y="171" width="130" height="28"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

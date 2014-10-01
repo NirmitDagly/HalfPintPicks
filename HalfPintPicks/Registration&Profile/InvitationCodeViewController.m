@@ -58,6 +58,25 @@
 }
 */
 
+#pragma Requests
+-(void)VarifyInvitationCode {
+    ApiRequest *apirequest = [[ApiRequest alloc]init];
+    apirequest.apiRequestDelegate = self;
+    NSString *urlString = [HelperMethod GetWebAPIBasePath];
+    
+    urlString = [urlString stringByAppendingString:[NSString stringWithFormat:@"&InvitationCode=%@",txtCode.text]];
+    [apirequest sendJsonGetRequestwithurl:urlString requestId:FirstRequest];
+}
+
+-(void)Invitationcoderequest {
+    ApiRequest *apirequest = [[ApiRequest alloc]init];
+    apirequest.apiRequestDelegate = self;
+    NSString *urlString = [HelperMethod GetWebAPIBasePath];
+    
+    urlString = [urlString stringByAppendingString:[NSString stringWithFormat:@"&email=%@",txtEmail.text]];
+    [apirequest sendJsonGetRequestwithurl:urlString requestId:SecondRequest];
+}
+
 - (IBAction)Join_click:(id)sender {
 
 }
@@ -66,6 +85,33 @@
     WelComeViewController *welComeVC = (WelComeViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"WelComeViewController"];
     [self presentViewController:welComeVC animated:YES completion:nil];
     
+}
+
+
+#pragma Requests callback Delagate Methods
+-(void)apiRequestCompletedWithError:(NSString *)errorString requestId:(int)requestId{
+    
+}
+
+-(void)apiRequestCompletedWithData:(NSMutableData *)responseData requestId:(int)requestId {
+    
+    NSError *error = nil;
+    //NSString *responceString = [[NSString alloc] initWithBytes:[responseData bytes] length:[responseData length] encoding:NSUTF8StringEncoding];
+    //NSLog(@"%@",responceString);
+    NSDictionary* responceDictionary = [NSJSONSerialization JSONObjectWithData:responseData
+                                                         options:kNilOptions
+                                                           error:&error];
+    NSLog(@"%@",responceDictionary);
+    if(requestId == FirstRequest)
+    {
+        NSLog(@"%d",FirstRequest);
+        
+    }
+    else if (requestId == SecondRequest)
+    {
+        NSLog(@"%d",SecondRequest);
+    }
+
 }
 
 #pragma TextField Related Methods
