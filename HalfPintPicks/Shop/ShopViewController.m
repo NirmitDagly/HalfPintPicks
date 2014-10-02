@@ -13,6 +13,11 @@
 @end
 
 @implementation ShopViewController
+{
+    NSMutableArray *arrShoppingData;
+    ItemListViewController *itemListViewController;
+}
+@synthesize searchBox,tblShopData,navBar,navItem,filterBarItem;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,6 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    arrShoppingData = [[NSMutableArray alloc]init];
+    [GeneralDeclaration generalDeclaration].currentScreen = @"ShopViewController";
     // Do any additional setup after loading the view.
 }
 
@@ -45,5 +52,122 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+//To display loading view
+-(void)displayLoadingView {
+    HUD = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    HUD.delegate = self;
+    [HUD hide:YES afterDelay:30.0];
+}
+
+//To dismiss loading view
+-(void)dismissLoadingView {
+    [HUD removeFromSuperview];
+    HUD = nil;
+}
+
+#pragma mark MBProgressHUDDelegate methods
+- (void)hudWasHidden:(MBProgressHUD *)hud {
+	[HUD removeFromSuperview];
+	HUD = nil;
+}
+
+#pragma Requests
+//FirstRequest
+-(void)GetAllAvailableItemsList {
+    [self displayLoadingView];
+    ApiRequest *apirequest = [[ApiRequest alloc]init];
+    apirequest.apiRequestDelegate = self;
+    NSString *urlString = [HelperMethod GetWebAPIBasePath];
+    
+    urlString = [urlString stringByAppendingString:[NSString stringWithFormat:@"&Email=%@",@""]];
+    [apirequest sendJsonGetRequestwithurl:urlString requestId:FirstRequest];
+}
+
+#pragma Requests callback Delagate Methods
+-(void)apiRequestCompletedWithError:(NSString *)errorString requestId:(int)requestId{
+    
+    UIAlertView *errorAlertView = [[UIAlertView alloc]initWithTitle:[[NSBundle mainBundle] valueForKey:@"CFBundleName"] message:@"Error" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [errorAlertView show];
+    
+}
+
+-(void)apiRequestCompletedWithData:(NSMutableData *)responseData requestId:(int)requestId {
+    
+    NSError *error = nil;
+    NSDictionary* responceDictionary = [NSJSONSerialization JSONObjectWithData:responseData
+                                                                       options:kNilOptions
+                                                                         error:&error];
+    NSLog(@"%@",responceDictionary);
+    [self dismissLoadingView];
+    NSLog(@"%d",requestId);
+    
+    if([[responceDictionary valueForKey:@"status"] intValue] == Success)
+    {
+        if(requestId == FirstRequest)
+        {
+            [self.tblShopData reloadData];
+            
+        }
+    }
+    else if([[responceDictionary valueForKey:@"status"] intValue] == Fail)
+    {
+        UIAlertView *errorAlert = [[UIAlertView alloc]initWithTitle:[[NSBundle mainBundle] valueForKey:@"CFBundleName"] message:@"There is some error occured . Please check." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [errorAlert show];
+    }
+    
+}
+
+#pragma Tableview Delagate Methods
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+        return 235.0f;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [arrShoppingData count];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+        return 0;
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+        static NSString *CellIdentifier = @"Cell";
+        
+        UITableViewCell *cell= [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        if(cell == nil)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.separatorInset = UIEdgeInsetsZero;
+            cell.backgroundColor = [UIColor colorWithRed:218.0f/255.0f green:218.0f/255.0f blue:218.0f/255.0f alpha:1.0f];
+        }
+        //ItemBoutique *itemInfo = (ItemBoutique *) [arrItemData objectAtIndex:(indexPath.row ) * 2];
+        itemListViewController = (ItemListViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"ItemListViewController"];
+        //itemListViewController.itemInfo = itemInfo;
+        itemListViewController.view.tag = (indexPath.row - 1) * 2;
+        itemListViewController.view.frame = CGRectMake(8, 9, 150, 225);
+        [cell addSubview:itemListViewController.view];
+        
+        //        if((((indexPath.row - 1) * 2) + 1) < [arrItemData count])
+        //            itemInfo = (ItemBoutique *) [arrItemData objectAtIndex:(((indexPath.row) * 2) + 1)];
+        //        else
+        //            itemInfo = nil;
+        
+        //        if(itemInfo != nil)
+        //        {
+        //            itemListViewController = (ItemListViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"ItemListViewController"];
+        //            //itemListViewController.itemInfo = itemInfo;
+        //            itemListViewController.view.frame = CGRectMake(164, 0, 150, 225);
+        //            itemListViewController.view.tag = ((indexPath.row - 1) * 2) + 1;
+        //            [cell addSubview:itemListViewController.view];
+        //        }
+        
+        return cell;
+    
+}
 
 @end

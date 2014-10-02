@@ -40,6 +40,11 @@
         
        
     }
+    else if([[GeneralDeclaration generalDeclaration].currentScreen isEqualToString:@"ShopViewController"])
+    {
+        
+        
+    }
     
 }
 @end
