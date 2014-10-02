@@ -27,4 +27,10 @@ typedef enum RequestStatus {
     Error = 2
 } Status;
 
+typedef enum SelectedIndex {
+    FirstIndex = 1,
+    SecondIndex = 2,
+    ThirdIdex = 3
+} CurrentSelectedIndex;
+
 #endif
