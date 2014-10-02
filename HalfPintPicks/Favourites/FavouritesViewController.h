@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FavouritesViewController : UIViewController
+@interface FavouritesViewController : UIViewController<ApiRequestDelegate,MBProgressHUDDelegate,UITableViewDataSource,UITableViewDelegate>
+{
+    MBProgressHUD *HUD;
+}
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBox;
+@property (weak, nonatomic) IBOutlet UITableView *tblItemData;
 
 @end

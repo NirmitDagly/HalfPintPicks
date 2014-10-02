@@ -19,8 +19,7 @@
 }
 @synthesize searchBox,tblShopData,navBar,navItem,filterBarItem;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -28,16 +27,14 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     arrShoppingData = [[NSMutableArray alloc]init];
     [GeneralDeclaration generalDeclaration].currentScreen = @"ShopViewController";
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -70,6 +67,12 @@
 - (void)hudWasHidden:(MBProgressHUD *)hud {
 	[HUD removeFromSuperview];
 	HUD = nil;
+}
+
+#pragma AddtoCart Events
+- (void)AddtoCart:(id)sender {
+    UIButton *cartButton = (UIButton *)sender;
+    NSLog(@"%ld",(long)cartButton.tag);
 }
 
 #pragma Requests
@@ -118,6 +121,20 @@
     
 }
 
+#pragma Search Button Delegate Methods
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+}
+
+-(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+     [searchBar setShowsCancelButton:YES animated:YES];
+    return YES;
+}
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    [searchBar setShowsCancelButton:NO animated:YES];
+}
+
 #pragma Tableview Delagate Methods
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -125,13 +142,12 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [arrShoppingData count];
+    return ([arrShoppingData count]  / 2) + ([arrShoppingData count] % 2) + 1;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
         return 0;
 }
-
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
         static NSString *CellIdentifier = @"Cell";
@@ -148,24 +164,37 @@
         //ItemBoutique *itemInfo = (ItemBoutique *) [arrItemData objectAtIndex:(indexPath.row ) * 2];
         itemListViewController = (ItemListViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"ItemListViewController"];
         //itemListViewController.itemInfo = itemInfo;
-        itemListViewController.view.tag = (indexPath.row - 1) * 2;
+        itemListViewController.view.tag = (indexPath.row) * 2;
         itemListViewController.view.frame = CGRectMake(8, 9, 150, 225);
+    
+        UIButton *btnCart = [UIButton buttonWithType:UIButtonTypeCustom];
+        btnCart.frame = CGRectMake(itemListViewController.view.frame.size.width - 50, 10, 40 , 40);
+        [btnCart setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btnCart setTitle:@"Cart" forState:UIControlStateNormal];
+        btnCart.backgroundColor = [UIColor blackColor];
+        btnCart.layer.cornerRadius = 5.0f;
+        [btnCart addTarget:self action:@selector(AddtoCart:) forControlEvents:UIControlEventTouchUpInside];
+        btnCart.userInteractionEnabled = YES;
+        btnCart.tag = indexPath.row * 2;
+        [itemListViewController.view addSubview:btnCart];
         [cell addSubview:itemListViewController.view];
         
-        //        if((((indexPath.row - 1) * 2) + 1) < [arrItemData count])
-        //            itemInfo = (ItemBoutique *) [arrItemData objectAtIndex:(((indexPath.row) * 2) + 1)];
-        //        else
-        //            itemInfo = nil;
-        
-        //        if(itemInfo != nil)
-        //        {
-        //            itemListViewController = (ItemListViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"ItemListViewController"];
-        //            //itemListViewController.itemInfo = itemInfo;
-        //            itemListViewController.view.frame = CGRectMake(164, 0, 150, 225);
-        //            itemListViewController.view.tag = ((indexPath.row - 1) * 2) + 1;
-        //            [cell addSubview:itemListViewController.view];
-        //        }
-        
+//                if((((indexPath.row) * 2) + 1) < [arrItemData count])
+//                    itemInfo = (ItemBoutique *) [arrItemData objectAtIndex:(((indexPath.row) * 2) + 1)];
+//                else
+//                    itemInfo = nil;
+//        
+//                if(itemInfo != nil)
+//                {
+//                    itemListViewController = (ItemListViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"ItemListViewController"];
+//                    //itemListViewController.itemInfo = itemInfo;
+//                    itemListViewController.view.frame = CGRectMake(164, 0, 150, 225);
+//                    itemListViewController.view.tag = ((indexPath.row) * 2) + 1;
+//                    btnCart.tag = ((indexPath.row) * 2) + 1;
+//                    [itemListViewController.view addSubview:btnCart];
+//                    [cell addSubview:itemListViewController.view];
+//                }
+    
         return cell;
     
 }
