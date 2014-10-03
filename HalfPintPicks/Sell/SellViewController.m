@@ -7,6 +7,7 @@
 //
 
 #import "SellViewController.h"
+#import "CameraViewController.h"
 
 @interface SellViewController ()
 
@@ -46,4 +47,11 @@
 }
 */
 
+- (IBAction)WHITEGLOW_Click:(id)sender {
+}
+- (IBAction)LISTYOURSELF_Click:(id)sender {
+    CameraViewController *cameraVC  = (CameraViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"CameraViewController"];
+    [self.tabBarController hidesBottomBarWhenPushed];
+    [self.navigationController pushViewController:cameraVC animated:YES];
+}
 @end

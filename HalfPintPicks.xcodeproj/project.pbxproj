@@ -23,6 +23,22 @@
 		789ED57119DD2690002A88E7 /* bg_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 789ED56B19DD2690002A88E7 /* bg_unselected.png */; };
 		789ED57319DD2914002A88E7 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 789ED57219DD2914002A88E7 /* 3.png */; };
 		789ED57519DD2CF7002A88E7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 789ED57419DD2CF7002A88E7 /* QuartzCore.framework */; };
+		78D9930F19DE727100616564 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D9930E19DE727100616564 /* CameraViewController.m */; };
+		78D9931F19DE803D00616564 /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9931119DE803D00616564 /* back_icon.png */; };
+		78D9932019DE803D00616564 /* back_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9931219DE803D00616564 /* back_icon@2x.png */; };
+		78D9932119DE803D00616564 /* cam.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9931319DE803D00616564 /* cam.png */; };
+		78D9932219DE803D00616564 /* cam@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9931419DE803D00616564 /* cam@2x.png */; };
+		78D9932319DE803D00616564 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9931519DE803D00616564 /* camera.png */; };
+		78D9932419DE803D00616564 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9931619DE803D00616564 /* camera@2x.png */; };
+		78D9932519DE803D00616564 /* flashlight_Off.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9931719DE803D00616564 /* flashlight_Off.png */; };
+		78D9932619DE803D00616564 /* flashlight_Off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9931819DE803D00616564 /* flashlight_Off@2x.png */; };
+		78D9932719DE803D00616564 /* flashlight_On.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9931919DE803D00616564 /* flashlight_On.png */; };
+		78D9932819DE803D00616564 /* flashlight_On@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9931A19DE803D00616564 /* flashlight_On@2x.png */; };
+		78D9932919DE803D00616564 /* remove_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9931B19DE803D00616564 /* remove_image.png */; };
+		78D9932A19DE803D00616564 /* remove_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9931C19DE803D00616564 /* remove_image@2x.png */; };
+		78D9932B19DE803D00616564 /* switch_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9931D19DE803D00616564 /* switch_camera.png */; };
+		78D9932C19DE803D00616564 /* switch_camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9931E19DE803D00616564 /* switch_camera@2x.png */; };
+		78D9932E19DE8D1800616564 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D9932D19DE8D1800616564 /* AVFoundation.framework */; };
 		C623FEFA19D8960F0005DF6E /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C623FEF919D8960F0005DF6E /* CartViewController.m */; };
 		C65C5EF919D9E5A100E19129 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C65C5EF619D9E5A100E19129 /* Base64.m */; };
 		C65C5EFA19D9E5A100E19129 /* HelperMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = C65C5EF819D9E5A100E19129 /* HelperMethod.m */; };
@@ -96,6 +112,23 @@
 		789ED56B19DD2690002A88E7 /* bg_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_unselected.png; sourceTree = "<group>"; };
 		789ED57219DD2914002A88E7 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		789ED57419DD2CF7002A88E7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		78D9930D19DE727100616564 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		78D9930E19DE727100616564 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		78D9931119DE803D00616564 /* back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_icon.png; sourceTree = "<group>"; };
+		78D9931219DE803D00616564 /* back_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_icon@2x.png"; sourceTree = "<group>"; };
+		78D9931319DE803D00616564 /* cam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cam.png; sourceTree = "<group>"; };
+		78D9931419DE803D00616564 /* cam@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cam@2x.png"; sourceTree = "<group>"; };
+		78D9931519DE803D00616564 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		78D9931619DE803D00616564 /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
+		78D9931719DE803D00616564 /* flashlight_Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashlight_Off.png; sourceTree = "<group>"; };
+		78D9931819DE803D00616564 /* flashlight_Off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flashlight_Off@2x.png"; sourceTree = "<group>"; };
+		78D9931919DE803D00616564 /* flashlight_On.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashlight_On.png; sourceTree = "<group>"; };
+		78D9931A19DE803D00616564 /* flashlight_On@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flashlight_On@2x.png"; sourceTree = "<group>"; };
+		78D9931B19DE803D00616564 /* remove_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remove_image.png; sourceTree = "<group>"; };
+		78D9931C19DE803D00616564 /* remove_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "remove_image@2x.png"; sourceTree = "<group>"; };
+		78D9931D19DE803D00616564 /* switch_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switch_camera.png; sourceTree = "<group>"; };
+		78D9931E19DE803D00616564 /* switch_camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch_camera@2x.png"; sourceTree = "<group>"; };
+		78D9932D19DE8D1800616564 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C623FEF819D8960F0005DF6E /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
 		C623FEF919D8960F0005DF6E /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
 		C65C5EF519D9E5A100E19129 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Base64.h; path = Core/Base64.h; sourceTree = "<group>"; };
@@ -196,6 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78D9932E19DE8D1800616564 /* AVFoundation.framework in Frameworks */,
 				789ED57519DD2CF7002A88E7 /* QuartzCore.framework in Frameworks */,
 				C6A0407119D876D6005547D0 /* CoreGraphics.framework in Frameworks */,
 				C6A0407319D876D6005547D0 /* UIKit.framework in Frameworks */,
@@ -261,6 +295,27 @@
 				789ED56219DD1942002A88E7 /* HMSegmentedControl.m */,
 			);
 			path = HMSegment;
+			sourceTree = "<group>";
+		};
+		78D9931019DE803D00616564 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				78D9931119DE803D00616564 /* back_icon.png */,
+				78D9931219DE803D00616564 /* back_icon@2x.png */,
+				78D9931319DE803D00616564 /* cam.png */,
+				78D9931419DE803D00616564 /* cam@2x.png */,
+				78D9931519DE803D00616564 /* camera.png */,
+				78D9931619DE803D00616564 /* camera@2x.png */,
+				78D9931719DE803D00616564 /* flashlight_Off.png */,
+				78D9931819DE803D00616564 /* flashlight_Off@2x.png */,
+				78D9931919DE803D00616564 /* flashlight_On.png */,
+				78D9931A19DE803D00616564 /* flashlight_On@2x.png */,
+				78D9931B19DE803D00616564 /* remove_image.png */,
+				78D9931C19DE803D00616564 /* remove_image@2x.png */,
+				78D9931D19DE803D00616564 /* switch_camera.png */,
+				78D9931E19DE803D00616564 /* switch_camera@2x.png */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 		C623FEF719D8960F0005DF6E /* Checkout */ = {
@@ -377,6 +432,7 @@
 		C6A0406D19D876D6005547D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				78D9932D19DE8D1800616564 /* AVFoundation.framework */,
 				789ED57419DD2CF7002A88E7 /* QuartzCore.framework */,
 				C6A0406E19D876D6005547D0 /* Foundation.framework */,
 				C6A0407019D876D6005547D0 /* CoreGraphics.framework */,
@@ -478,6 +534,8 @@
 			children = (
 				C6A040C019D87992005547D0 /* SellViewController.h */,
 				C6A040C119D87992005547D0 /* SellViewController.m */,
+				78D9930D19DE727100616564 /* CameraViewController.h */,
+				78D9930E19DE727100616564 /* CameraViewController.m */,
 			);
 			path = Sell;
 			sourceTree = "<group>";
@@ -510,6 +568,7 @@
 		C6A040D119D879FF005547D0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				78D9931019DE803D00616564 /* Icons */,
 				789ED57219DD2914002A88E7 /* 3.png */,
 				789ED56619DD2690002A88E7 /* bg_sel_sel.png */,
 				789ED56719DD2690002A88E7 /* bg_sel_uns.png */,
@@ -612,17 +671,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78D9932A19DE803D00616564 /* remove_image@2x.png in Resources */,
 				789ED57019DD2690002A88E7 /* bg_uns_uns.png in Resources */,
+				78D9932319DE803D00616564 /* camera.png in Resources */,
+				78D9932519DE803D00616564 /* flashlight_Off.png in Resources */,
 				C6A0408719D876D6005547D0 /* Images.xcassets in Resources */,
 				788F562119DAC89E00D15CE4 /* README.mdown in Resources */,
 				789ED57319DD2914002A88E7 /* 3.png in Resources */,
 				789ED56C19DD2690002A88E7 /* bg_sel_sel.png in Resources */,
+				78D9931F19DE803D00616564 /* back_icon.png in Resources */,
+				78D9932019DE803D00616564 /* back_icon@2x.png in Resources */,
 				789ED56E19DD2690002A88E7 /* bg_selected.png in Resources */,
+				78D9932C19DE803D00616564 /* switch_camera@2x.png in Resources */,
+				78D9932219DE803D00616564 /* cam@2x.png in Resources */,
 				789ED57119DD2690002A88E7 /* bg_unselected.png in Resources */,
+				78D9932419DE803D00616564 /* camera@2x.png in Resources */,
 				C6A0407919D876D6005547D0 /* InfoPlist.strings in Resources */,
+				78D9932619DE803D00616564 /* flashlight_Off@2x.png in Resources */,
+				78D9932819DE803D00616564 /* flashlight_On@2x.png in Resources */,
+				78D9932719DE803D00616564 /* flashlight_On.png in Resources */,
+				78D9932B19DE803D00616564 /* switch_camera.png in Resources */,
 				C6A0408219D876D6005547D0 /* Main.storyboard in Resources */,
 				789ED56D19DD2690002A88E7 /* bg_sel_uns.png in Resources */,
+				78D9932119DE803D00616564 /* cam.png in Resources */,
 				789ED56F19DD2690002A88E7 /* bg_uns_sel.png in Resources */,
+				78D9932919DE803D00616564 /* remove_image.png in Resources */,
 				789ED56519DD1C38002A88E7 /* 1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,6 +716,7 @@
 				C6A040C919D87992005547D0 /* LoginViewController.m in Sources */,
 				C65C5F4119D9E60700E19129 /* AFHTTPClient.m in Sources */,
 				788F562319DAC89E00D15CE4 /* EGOImageLoader.m in Sources */,
+				78D9930F19DE727100616564 /* CameraViewController.m in Sources */,
 				C65C5F1419D9E5FA00E19129 /* NSObject+SBJSON.m in Sources */,
 				C65C5EFE19D9E5ED00E19129 /* Reachability.m in Sources */,
 				C65C5F4919D9E60700E19129 /* UIImageView+AFNetworking.m in Sources */,

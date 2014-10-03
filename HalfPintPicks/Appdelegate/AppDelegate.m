@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  HalfPintPicks
 //
-//  Created by MAAUMA on 9/28/14.
+//  Created by TechCronus on 9/28/14.
 //  Copyright (c) 2014 TechCronus. All rights reserved.
 //
 

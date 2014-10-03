@@ -13,6 +13,11 @@
 @end
 
 @implementation CartViewController
+{
+    int selectedIndex;
+}
+
+@synthesize selectionImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,6 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self SetUIApperence];
     // Do any additional setup after loading the view.
 }
 
@@ -35,6 +41,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)SetUIApperence {
+    self.btnCart.backgroundColor = [UIColor clearColor];
+    self.btnPayment.backgroundColor = [UIColor colorWithRed:150.0f/255.0f green:154.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
+    self.btnShipping.backgroundColor = [UIColor colorWithRed:150.0f/255.0f green:154.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
+    
+    selectedIndex = FirstIndex;
+}
 /*
 #pragma mark - Navigation
 
@@ -46,4 +60,52 @@
 }
 */
 
+- (IBAction)CartStep_Click:(id)sender {
+    UIButton *btnSelected = (UIButton *)sender;
+    if(btnSelected.tag == 15)
+    {
+        selectedIndex = FirstIndex;
+
+        [UIView animateWithDuration:0.2 delay:0.0 options:(UIViewAnimationOptionCurveLinear & UIViewAnimationOptionBeginFromCurrentState) animations:^{
+            selectionImage.frame = CGRectMake(0, 0, self.selectionImage.frame.size.width, self.selectionImage.frame.size.height);
+            self.btnCart.backgroundColor = [UIColor clearColor];
+            self.btnShipping.backgroundColor = [UIColor colorWithRed:150.0f/255.0f green:154.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
+            self.btnPayment.backgroundColor = [UIColor colorWithRed:150.0f/255.0f green:154.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
+        }completion:^(BOOL complete){
+            //
+        }];
+        
+        //[self GetApprovedItemList];
+    }
+    else if (btnSelected.tag == 16)
+    {
+        selectedIndex = SecondIndex;
+        
+        [UIView animateWithDuration:0.2 delay:0.0 options:(UIViewAnimationOptionCurveLinear & UIViewAnimationOptionBeginFromCurrentState) animations:^{
+            selectionImage.frame = CGRectMake(106, 0, self.selectionImage.frame.size.width, self.selectionImage.frame.size.height);
+            self.btnShipping.backgroundColor = [UIColor clearColor];
+            self.btnCart.backgroundColor = [UIColor colorWithRed:150.0f/255.0f green:154.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
+            self.btnPayment.backgroundColor = [UIColor colorWithRed:150.0f/255.0f green:154.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
+        }completion:^(BOOL complete){
+            //
+        }];
+        
+        //[self GetFollowersList];
+    }
+    else
+    {
+        selectedIndex = ThirdIdex;
+        
+        [UIView animateWithDuration:0.2 delay:0.0 options:(UIViewAnimationOptionCurveLinear & UIViewAnimationOptionBeginFromCurrentState) animations:^{
+            selectionImage.frame = CGRectMake(214, 0, self.selectionImage.frame.size.width, self.selectionImage.frame.size.height);
+            self.btnPayment.backgroundColor = [UIColor clearColor];
+            self.btnShipping.backgroundColor = [UIColor colorWithRed:150.0f/255.0f green:154.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
+            self.btnCart.backgroundColor = [UIColor colorWithRed:150.0f/255.0f green:154.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
+        }completion:^(BOOL complete){
+            //
+        }];
+        
+        //[self GetFollowingList];
+    }
+}
 @end
